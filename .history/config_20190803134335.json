@@ -1,0 +1,4 @@
+{
+    "connectionString":"mongodb://localhost/ait_task",
+    "secret":"ITS VERY CONFIDENTIAL"
+}

@@ -1,0 +1,4 @@
+{
+    "connectionString":"mongodb://localhost/ow-task2",
+    "secret":"ITS VERY CONFIDENTIAL"
+}

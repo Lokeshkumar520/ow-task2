@@ -32,12 +32,12 @@ Body:raw -JSON(application/json)
 "password": "Your password here",
 "method": "POST"
 } 
-# Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
-#      @On Success:
-#      {
-#     "status": "Success",
-#     "message": "Registered Admin"
-#      }
+   # Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
+    #      @On Success:
+    #      {
+    #     "status": "Success",
+    #     "message": "Registered Admin"
+    #      }
 
 
 

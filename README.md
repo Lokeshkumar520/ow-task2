@@ -20,7 +20,7 @@ Which Allow to register a user as an admin who have access to add new devices in
 
 #APIs List to test the app.
 1. Admin Registration API
-/*//////////////////////////////////////
+//////////////////////////////////////
         method: POST,
         URL: http://localhost:4000/user/register
         Headder Content-type : application/json
@@ -39,6 +39,6 @@ Which Allow to register a user as an admin who have access to add new devices in
             "status": "Success",
             "message": "Registered Admin"
              }
-*/
+
 
 

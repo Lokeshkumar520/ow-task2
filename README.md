@@ -194,7 +194,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                     "status": "Success",
                     "message": " All Device are deleted Successfully"
                   }           
-    #Listen For Socket.io Client side for All events:
+          #Listen For Socket.io Client side for All events:
             URL: http://localhost:4000/
             Event names to Listen:
             1. "device_deleted"

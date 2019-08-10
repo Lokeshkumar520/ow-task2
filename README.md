@@ -23,6 +23,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                * method: POST
                * URL: http://localhost:4000/user/register
                * Headder Content-type : application/json
+               * Auth: No Auth Required.
                * Body:raw -JSON(application/json)
                  {
                 "username": "Your username here",
@@ -43,6 +44,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                * method: POST
                * URL: http://localhost:4000/user/authenticate
                * Headder Content-type : application/json
+               * Auth: No Auth Required.
                * Body:raw -JSON(application/json)
                  {
                 "username": "Your username here",
@@ -67,11 +69,33 @@ Which Allow to register a user as an admin who have access to add new devices in
                            "__v": 0
                         }
                    }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
-        3. Get All Device List API
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                   3. Add New Device into Device DB Collection API
+               * method: POST
+               * URL: http://localhost:4000/user/addDevice
+               * Headder Content-type : application/json
+               * Auth: Type-Bearer Token: (Header should attached with your recieved token on success of log in)
+               * Body:raw -JSON(application/json)
+                 {
+                    "newDeviceName": "D_LINK Wifi",
+                    "newDeviceActions": {
+                                    "restart": "false",
+                                    "powerOnOff": "false"
+                            },
+                    "method": "POST"
+                 }
+               * Expected Response: if there is no already added a device with same name, then admin can be Add a Device successfully.  
+                  @On Success:
+                  {
+                    "status": "Success",
+                    "message": "New Device Added Successfully"
+                  }
+                   
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        4. Get All Device List API
                * method: GET
                * URL: http://localhost:4000/user/getAllDevices
                * Headder Content-type : application/json
+               * Auth: No Auth Required.
                * Body:raw -JSON(application/json)
                * Expected Response: Registered / Created Devices along with Current Action Status are listed with this API.  
                   @On Success:      
@@ -105,6 +129,76 @@ Which Allow to register a user as an admin who have access to add new devices in
                         }
                     ]
                 }
-                  
-
-
+        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////        
+        5. Set Device Power On/Off API
+               * method: POST
+               * URL: http://localhost:4000/user/setDevicePowerOnOff
+               * Headder Content-type : application/json
+               * Auth: Type-Bearer Token: (Header should attached with your recieved token on success of log in)
+               * Body:raw -JSON(application/json)
+                     {
+                     "id": "attach device id to wich you want to change action", //(Take one _id value from recieved list of Device docs                                                                                  // on 4th API Call).   
+                     "powerOnOff": true, //(you can set true or false here )
+                     "method": "POST"
+                     }
+               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be Change the Action.  
+                  @On Success:
+                  {
+                    "status": "Success",
+                    "message": "'<your Device Name will print here>'s PowerOnOff action changed"
+                  }                   
+          ////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
+          6. Set Device Restart API
+               * method: POST
+               * URL: http://localhost:4000/user/setDeviceRestart
+               * Headder Content-type : application/json
+               * Auth: Type-Bearer Token: (Header should attached with your recieved token on success of log in)
+               * Body:raw -JSON(application/json)
+                     {
+                     "id": "attach device id to wich you want to change action", //(Take one _id value from recieved list of Device docs                                                                                  // on 4th API Call).   
+                     "restart": true, //(you can set true or false here )
+                     "method": "POST"
+                     }
+               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be Change the Action.  
+                  @On Success:
+                  {
+                    "status": "Success",
+                    "message": " '<your Device Name will print here>' Device Action Changed Successfully"
+                  }
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
+          7. Device Delete API
+               * method: POST
+               * URL: http://localhost:4000/user/deleteDevice
+               * Headder Content-type : application/json
+               * Auth: Type-Bearer Token: (Header should attached with your recieved token on success of log in)
+               * Body:raw -JSON(application/json)
+                     {
+                     "id": "attach device id to wich you want to delete", //(Take one _id value from recieved list of Device docs                                                                                  // on 4th API Call).   
+                     "method": "POST"
+                     }
+               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be delete device.  
+                  @On Success:
+                  {
+                    "status": "Success",
+                    "message": " '<your Device Name will print here>' Device deleted Successfully"
+                  }   
+          /////////////////////////////////////////////////////////////////////////////////////////////////////////////////       
+          8. All Device Delete API
+               * method: GET
+               * URL: http://localhost:4000/user/deleteAllDevices
+               * Headder Content-type : application/json
+               * Auth: Type-Bearer Token: (Header should attached with your recieved token on success of log in)
+               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be delete device.  
+                  @On Success:
+                  {
+                    "status": "Success",
+                    "message": " All Device are deleted Successfully"
+                  }           
+    #Listen For Socket.io Client side for All events:
+            URL: http://localhost:4000/
+            Event names to Listen:
+            1. "device_deleted"
+            2. "device_Action_Restart_Changed"
+            3. "device_Action_PowerOnOff_changed"
+            4. "new_Device_Added"
+            5. "All_devices_deleted"

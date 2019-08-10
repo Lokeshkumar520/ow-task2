@@ -102,7 +102,7 @@ async function setDevicePowerOnOff(body) {
         try {
             await isDevice.save();
             io.emit('device_Action_PowerOnOff_changed',{ message: isDevice.deviceName + '\'s PowerOnOff action changed', freshDeviceList: await Device.find({}) });
-            let response = { status: 'Success', message: isDevice.deviceName + '\'s PowerOnOff action changed', freshDeviceList: await Device.find({})  };
+            let response = { status: 'Success', message: isDevice.deviceName + '\'s PowerOnOff action changed Successfully' };
             return response;
         } catch (error) {
             console.error(error);
@@ -122,7 +122,7 @@ async function setDeviceRestart(body) {
         try {
             await isDevice.save();
             io.emit('device_Action_Restart_Changed',{ message: isDevice.deviceName + '\'s restart action changed', freshDeviceList: await Device.find({}) });
-            let response = { status: 'Success', message: 'Device Action Changed Successfully' };
+            let response = { status: 'Success', message: isDevice.deviceName + 'Device Action Changed Successfully' };
             return response;
         } catch (error) {
             let response = { status: 'Failed', message: 'Error in Device Action, please try again' };
@@ -149,8 +149,8 @@ async function deleteDevice(body) {
 async function deleteAllDevices() {
     const isDevice = await Device.find({}).deleteMany();
     if (isDevice) {
-        io.emit('All_devices_deleted', { message: isDevice + ' are deleted', freshDeviceList: await Device.find({}) });
-        let response = { status: 'Success', message: 'All Device are deleted Successfully' };
+        io.emit('All_devices_deleted', { message: 'All Devices deleted', freshDeviceList: await Device.find({}) });
+        let response = { status: 'Success', message: 'All Devices deleted Successfully' };
         return response;
     }
     let response = { status: 'Failed', message: 'Devices not exist/already removed' };

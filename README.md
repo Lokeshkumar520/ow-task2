@@ -18,8 +18,8 @@ Which Allow to register a user as an admin who have access to add new devices in
 5. Start Postman application to call below listed APIs and get associated responses for eacg API Call.
 6. Start Socket.io Tester Application to Listen all the emmited events and messages from Admin on below listed EVENTS. 
 
-#APIs List to test the app.
-1. Admin Registration API
+    # APIs List to test the app.
+    1. Admin Registration API
                 # method: POST
                 # URL: http://localhost:4000/user/register
                 # Headder Content-type : application/json
@@ -32,12 +32,12 @@ Which Allow to register a user as an admin who have access to add new devices in
                 #  "password": "Your password here",
                 #  "method": "POST"
                 #  } 
-        # Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
-         #      @On Success:
-         #      {
-         #     "status": "Success",
-         #     "message": "Registered Admin"
-         #      }
+          # Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
+            #      @On Success:
+            #      {
+            #     "status": "Success",
+            #     "message": "Registered Admin"
+            #      }
 
 
 

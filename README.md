@@ -202,3 +202,4 @@ Which Allow to register a user as an admin who have access to add new devices in
             3. "device_Action_PowerOnOff_changed"
             4. "new_Device_Added"
             5. "All_devices_deleted"
+            6. "Device_List"

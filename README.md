@@ -20,10 +20,10 @@ Which Allow to register a user as an admin who have access to add new devices in
 
     # APIs List to test the app.
         1. Admin Registration API
-                method: POST
-                URL: http://localhost:4000/user/register
-                Headder Content-type : application/json
-                Body:raw -JSON(application/json)
+               * method: POST
+               * URL: http://localhost:4000/user/register
+               * Headder Content-type : application/json
+               * Body:raw -JSON(application/json)
                  {
                 "username": "Your username here",
                 "firstName": "Your first name here",
@@ -32,7 +32,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                 "password": "Your password here",
                 "method": "POST"
                  } 
-          # Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
+               * Expected Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
                   @On Success:
                   {
                  "status": "Success",

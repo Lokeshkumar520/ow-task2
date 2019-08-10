@@ -38,6 +38,36 @@ Which Allow to register a user as an admin who have access to add new devices in
                  "status": "Success",
                  "message": "Registered Admin"
                   }
-
+         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
+         2. Admin Authentication/Login API
+               * method: POST
+               * URL: http://localhost:4000/user/authenticate
+               * Headder Content-type : application/json
+               * Body:raw -JSON(application/json)
+                 {
+                "username": "Your username here",
+                "password": "Your password here",
+                "method": "POST"
+                 } 
+               * Expected Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
+                  @On Success:
+                  {
+                   "status": "Success",
+                   "message": "Successfully logged in ",
+                   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
+                            .eyJzdWIiOiI1ZDRiYzU1MDllOTM1MDA5OTRlZDI1YTAiLCJpY
+                            XQiOjE1NjU0MzA4MDl9.BiJTTsSEJTkeGDJ7p_LG5O5vnRzQMxBuYXqC-4GxAU8",
+                   "profile":   {
+                           "_id": "5d4bc5509e93500994ed25a0",
+                           "username": "mydreams@gmail.com",
+                           "firstName": "Lokesh",
+                           "lastName": "Sangulgi",
+                           "gender": "Male",
+                           "userRole": "Admin",
+                           "updatedAt": "2019-08-08T06:46:40.177Z",
+                           "createdAt": "2019-08-08T06:46:40.177Z",
+                           "__v": 0
+                        }
+                   }
 
 

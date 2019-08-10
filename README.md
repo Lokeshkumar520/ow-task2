@@ -15,7 +15,7 @@ Which Allow to register a user as an admin who have access to add new devices in
 2. Run MongoDB Server (on Localhost)  *Run "mongod", (ignore if already on run)
 3. Run npm install for installation of all dependencies *Run "npm install" 
 4. Run npm start to start server listening on port 4000 *Run "npm start".
-5. Start Postman application to call below listed APIs and get associated responses for eacg API Call.
+5. Start Postman application to call below listed APIs and get associated responses for each API Call.
 6. Start Socket.io Tester Application to Listen all the emmited events and messages from Admin on below listed EVENTS. 
 
     # APIs List to test the app.

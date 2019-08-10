@@ -38,8 +38,8 @@ Which Allow to register a user as an admin who have access to add new devices in
                  "status": "Success",
                  "message": "Registered Admin"
                   }
-         //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
-         2. Admin Authentication/Login API
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
+        2. Admin Authentication/Login API
                * method: POST
                * URL: http://localhost:4000/user/authenticate
                * Headder Content-type : application/json
@@ -49,25 +49,62 @@ Which Allow to register a user as an admin who have access to add new devices in
                 "password": "Your password here",
                 "method": "POST"
                  } 
-               * Expected Response: if there is no Registered Admin in database, A new admin can be registered successfully.  
+               * Expected Response: if there is no Registered Admin in database,then admin can be logeed in successfully.  
                   @On Success:
                   {
                    "status": "Success",
                    "message": "Successfully logged in ",
-                   "token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9
-                            .eyJzdWIiOiI1ZDRiYzU1MDllOTM1MDA5OTRlZDI1YTAiLCJpY
-                            XQiOjE1NjU0MzA4MDl9.BiJTTsSEJTkeGDJ7p_LG5O5vnRzQMxBuYXqC-4GxAU8",
+                   "token":"Your token here",
                    "profile":   {
                            "_id": "5d4bc5509e93500994ed25a0",
-                           "username": "mydreams@gmail.com",
-                           "firstName": "Lokesh",
-                           "lastName": "Sangulgi",
-                           "gender": "Male",
+                           "username": "Your user name display here",
+                           "firstName": "Your First name here",
+                           "lastName": "Your Last name here",
+                           "gender": "Your Gender Here",
                            "userRole": "Admin",
                            "updatedAt": "2019-08-08T06:46:40.177Z",
                            "createdAt": "2019-08-08T06:46:40.177Z",
                            "__v": 0
                         }
                    }
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////         
+        3. Get All Device List API
+               * method: GET
+               * URL: http://localhost:4000/user/getAllDevices
+               * Headder Content-type : application/json
+               * Body:raw -JSON(application/json)
+               * Expected Response: Registered / Created Devices along with Current Action Status are listed with this API.  
+                  @On Success:      
+                  {
+                    "status": "Success",
+                    "message": "All Device Listed Successfully",
+                    "deviceList": [
+                        {
+                            "deviceAction": {
+                                "restart": false,
+                                "powerOnOff": false
+                            },
+                            "_id": "5d4bc7229e93500994ed25a1",
+                            "deviceName": "D_LINK Wifi Repeater ",
+                            "updatedAt": "2019-08-08T06:54:26.249Z",
+                            "createdAt": "2019-08-08T06:54:26.249Z",
+                            "__v": 0,
+                            "id": "5d4bc7229e93500994ed25a1"
+                        },
+                        {
+                            "deviceAction": {
+                                "restart": false,
+                                "powerOnOff": false
+                            },
+                            "_id": "5d4bc7559e93500994ed25a2",
+                            "deviceName": "D_LINK Wifi Router ",
+                            "updatedAt": "2019-08-08T06:55:17.546Z",
+                            "createdAt": "2019-08-08T06:55:17.546Z",
+                            "__v": 0,
+                            "id": "5d4bc7559e93500994ed25a2"
+                        }
+                    ]
+                }
+                  
 
 

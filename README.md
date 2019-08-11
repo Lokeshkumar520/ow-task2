@@ -7,7 +7,7 @@ Which Allow to register a user as an admin who have access to add new devices in
 1. Node js
 2. MongoDB
 3. npm
-4. Postman
+4. Postman download link https://www.getpostman.com/downloads/
 5. Socket.io Tester download link http://appsaloon.github.io/socket.io-tester/
 
 #Usage

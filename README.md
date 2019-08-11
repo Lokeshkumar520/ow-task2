@@ -8,7 +8,7 @@ Which Allow to register a user as an admin who have access to add new devices in
 2. MongoDB
 3. npm
 4. Postman
-5. Socket.io Tester
+5. Socket.io Tester download link http://appsaloon.github.io/socket.io-tester/
 
 #Usage
 1. Clone this repo 

@@ -51,7 +51,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                 "password": "Your password here",
                 "method": "POST"
                  } 
-               * Expected Response: if there is no Registered Admin in database,then admin can be logeed in successfully.  
+               * Expected Response: if there is Registered Admin in database,then admin can be logeed in successfully.  
                   @On Success:
                   {
                    "status": "Success",
@@ -69,7 +69,8 @@ Which Allow to register a user as an admin who have access to add new devices in
                            "__v": 0
                         }
                    }
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////                   3. Add New Device into Device DB Collection API
+        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        3. Add New Device into Device DB Collection API
                * method: POST
                * URL: http://localhost:4000/user/addDevice
                * Headder Content-type : application/json
@@ -141,7 +142,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                      "powerOnOff": true, //(you can set true or false here )
                      "method": "POST"
                      }
-               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be Change the Action.  
+               * Expected Response: if there is a device in database associated with your attached id, then admin can be Change the Action.  
                   @On Success:
                   {
                     "status": "Success",
@@ -159,7 +160,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                      "restart": true, //(you can set true or false here )
                      "method": "POST"
                      }
-               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be Change the Action.  
+               * Expected Response: if there is a device in database associated with your attached id, then admin can be Change the Action.  
                   @On Success:
                   {
                     "status": "Success",
@@ -176,7 +177,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                      "id": "attach device id to wich you want to delete", //(Take one _id value from recieved list of Device docs                                                                                  // on 4th API Call).   
                      "method": "POST"
                      }
-               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be delete device.  
+               * Expected Response: if there is a device in database associated with your attached id, then admin can be delete device.  
                   @On Success:
                   {
                     "status": "Success",
@@ -188,7 +189,7 @@ Which Allow to register a user as an admin who have access to add new devices in
                * URL: http://localhost:4000/user/deleteAllDevices
                * Headder Content-type : application/json
                * Auth: Type-Bearer Token: (Header should attached with your recieved token on success of log in)
-               * Expected Response: if  in DB there is a device associated with your attached id, then admin can be delete device.  
+               * Expected Response: admin can be delete all the devices.  
                   @On Success:
                   {
                     "status": "Success",

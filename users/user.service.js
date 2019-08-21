@@ -50,8 +50,8 @@ async function authenticate({ username, password }) {
 
 async function create(body) {
     //checks for Admin exist or not//////////////////////////////////////////////////
-    const isAdmin = await User.findOne({ userRole: 'Admin' });
-    if (isAdmin) {
+    const isAdmin = await User.find({ userRole: "Admin" });
+    if (isAdmin.length) {
         let response = { status: "Failed", message: "Admin is already registered as " + isAdmin.username };
         return response;
     }
